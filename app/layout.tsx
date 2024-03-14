@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { AI } from "./action";
 import "./globals.css";
+import DesktopMockup from "@/components/website-ui/desktop-mockup";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <DesktopMockup>
+          <AI>{children}</AI>
+        </DesktopMockup>
+      </body>
     </html>
   );
 }
